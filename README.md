@@ -1,8 +1,8 @@
 # CIL_Project
 ## What to do before running CIL-Notebook.ipynb
 * [Tutorial](https://github.com/kpe/bert-for-tf2)
-* Download Twitter Dataset from Kaggle Competition Page and put in a folder named twitter-datasets in the folder CIL.
-* Download from https://github.com/google-research/bert either the bert_base Model or the bert_large_wwm Model (Whole Word Masking) and put it in the folder CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
+* Download Twitter Dataset from [Kaggle Competition Page](https://www.kaggle.com/c/cil-text-classification-2020) and put in a folder named twitter-datasets in the folder CIL. (only neg-full.txt needed, because too big for GitHub)
+* Read and do things in README of CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available.
 ## Other resources/papers
 ### Other models
@@ -24,7 +24,7 @@
 * MoNoise [Model](https://www.aclweb.org/anthology/P19-3032.pdf) [Rules](https://arxiv.org/pdf/1710.03476.pdf)
   * For  each  word  we  find  the  top  40  closest  candidates  in  thevector space based on the cosine distance
   * We use the [Aspell](http://aspell.net/) spell checker to repair typographical errors
-  * We generate a list of all replacement pairs occurring in the training data. 
+  * We generate a list of all replacement pairs occurring in the training data.
   * We include a generation module thatsimply searches for all words in the Aspell dictionary which start with the character sequence of ouroriginal word.  To avoid large candidate lists.
   * We generate word splits by splitting a word on every possible position and checking if bothresulting words are canonical according to the Aspell dictionary.
 * [MoNoise alternative](https://arxiv.org/pdf/1904.06100.pdf)
@@ -33,4 +33,3 @@
 ### Adverserial
 * [Adverserial NLP Overview](https://www.aclweb.org/anthology/N19-5001/)
 * [Adverserial with RNNs](https://www.aclweb.org/anthology/L18-1584.pdf)
-  
