@@ -4,6 +4,18 @@
 * Download Twitter Dataset from [Kaggle Competition Page](https://www.kaggle.com/c/cil-text-classification-2020) and put in a folder named twitter-datasets in the folder CIL. (only neg-full.txt needed, because too big for GitHub)
 * Read and do things in README of CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available.
+
+## What to do before running ALBERT2.ipynb
+* Download [ALBERT](https://github.com/google-research/ALBERT) pretrained model and put it in './bert/checkpoints/albert_large_v2'.
+* From the library that we use, go to CIL_Project/CIL/bert/tokenization/albert_tokenization.py and uncomment #import sentencepiece as spm.
+* From there, the script makes the same steps as the original Notebook and the only differences are the creating of the model loads ALBERT weights and has shared_layer and embedding_size for ALBERT according to [library readme](https://github.com/kpe/bert-for-tf2)
+* The other difference is the preprocessing that uses the ALBERT tokenizer and the sentencepiece model, but they have the same interface/class as the original tutorial(FullTokenizer).
+* Other changes are only directories.
+* Current Learning on Large
+
+Epoch 00001: LearningRateScheduler reducing learning rate to 1e-07.
+35120/35120 [==============================] - 3071s 87ms/step - loss: 0.7209 - acc: 0.5242 - val_loss: 0.6843 - val_acc: 0.5702 - lr: 1.0000e-07
+
 ## Other resources/papers
 ### Other models
 * [Google's T5](https://arxiv.org/pdf/1910.10683.pdf) instead of BERT?
