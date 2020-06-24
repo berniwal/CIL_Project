@@ -230,7 +230,7 @@ def whitespace_tokenize(text):
     return tokens
 
 
-class FullTokenizer(object):
+class AlbertFullTokenizer(object):
     """Runs end-to-end tokenziation."""
 
     def __init__(self, vocab_file, do_lower_case=True, spm_model_file=None):
@@ -252,7 +252,7 @@ class FullTokenizer(object):
 
     @classmethod
     def from_scratch(cls, vocab_file, do_lower_case, spm_model_file):
-        return FullTokenizer(vocab_file, do_lower_case, spm_model_file)
+        return AlbertFullTokenizer(vocab_file, do_lower_case, spm_model_file)
 
     @classmethod
     def from_hub_module(cls, hub_module, spm_model_file):
@@ -266,7 +266,7 @@ class FullTokenizer(object):
                 vocab_file, do_lower_case = sess.run(
                     [tokenization_info["vocab_file"],
                      tokenization_info["do_lower_case"]])
-        return FullTokenizer(
+        return AlbertFullTokenizer(
             vocab_file=vocab_file, do_lower_case=do_lower_case,
             spm_model_file=spm_model_file)
 
