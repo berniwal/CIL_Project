@@ -1,2 +1,5 @@
 
 train_neg_full.txt
+result_pos_full.txt
+result_neg_full.txt
+USE_monoise.csv
