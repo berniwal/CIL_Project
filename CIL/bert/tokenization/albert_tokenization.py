@@ -26,7 +26,7 @@ import unicodedata
 import six
 from six.moves import range
 import tensorflow.compat.v1 as tf
-#import sentencepiece as spm
+import sentencepiece as spm
 
 SPIECE_UNDERLINE = u"▁".encode("utf-8")
 
