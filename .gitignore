@@ -1,2 +1,2 @@
-
-train_neg_full.txt
+CIL/twitter-datasets/*
+CIL/extra_data/*
