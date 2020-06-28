@@ -13,9 +13,6 @@
 * Other changes are only directories.
 * Current Learning on Large
 
-Epoch 00001: LearningRateScheduler reducing learning rate to 1e-07.
-35120/35120 [==============================] - 3071s 87ms/step - loss: 0.7209 - acc: 0.5242 - val_loss: 0.6843 - val_acc: 0.5702 - lr: 1.0000e-07
-
 ## Other resources/papers
 ### Other models
 * [Google's T5](https://arxiv.org/pdf/1910.10683.pdf) instead of BERT?
