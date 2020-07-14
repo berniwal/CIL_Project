@@ -42,3 +42,6 @@
 ### Adverserial
 * [Adverserial NLP Overview](https://www.aclweb.org/anthology/N19-5001/)
 * [Adverserial with RNNs](https://www.aclweb.org/anthology/L18-1584.pdf)
+### Links to Google Drive Folders
+* [Bert Base with MoNoise without badspeller and without extra data (Manuel) and Albert Base without MoNoise and without extra data](https://drive.google.com/drive/folders/1ynCZnjcYXVg_qZtam3bAbXrEUiI4CyqI?usp=sharing)
+* [AlBert large, no Monoise, no additional data](https://drive.google.com/drive/folders/1bon0OFwJRQRY1rsEiWRKOhNugxcZ5sPg?usp=sharing)
