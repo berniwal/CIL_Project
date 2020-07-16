@@ -15,11 +15,8 @@
 
 ## Other resources/papers
 ### Other models
-* [Google's T5](https://arxiv.org/pdf/1910.10683.pdf) instead of BERT?
-  * [Announcement with Colab Link](https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html)
-  * [Huggingface implementation](https://huggingface.co/transformers/model_doc/t5.html)
 * [Albert](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
-* [GPT-3](https://arxiv.org/abs/2005.14165) is not much different to GPT-2 for much training and not available to public.
+* [BERT explanation](http://jalammar.github.io/illustrated-bert/)
 ### Preprocessing
 * [Trainig data set](https://www.kaggle.com/kazanova/sentiment140)
 * [Preprocessing](https://trec.nist.gov/pubs/trec28/papers/DICE_UPB.IS.pdf)
@@ -36,7 +33,6 @@
   * We generate a list of all replacement pairs occurring in the training data.
   * We include a generation module thatsimply searches for all words in the Aspell dictionary which start with the character sequence of ouroriginal word.  To avoid large candidate lists.
   * We generate word splits by splitting a word on every possible position and checking if bothresulting words are canonical according to the Aspell dictionary.
-* [MoNoise alternative](https://arxiv.org/pdf/1904.06100.pdf)
 * [Lexical Normalization with BERT](https://www.aclweb.org/anthology/D19-5539.pdf)
 * [Twitter Fine-Tuning BERT](https://arxiv.org/pdf/1905.05583.pdf)
 ### Adverserial
