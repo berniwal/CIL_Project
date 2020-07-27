@@ -5,14 +5,6 @@
 * Read and do things in README of CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available.
 
-## What to do before running ALBERT2.ipynb
-* Download [ALBERT](https://github.com/google-research/ALBERT) pretrained model and put it in './bert/checkpoints/albert_large_v2'.
-* From the library that we use, go to CIL_Project/CIL/bert/tokenization/albert_tokenization.py and uncomment #import sentencepiece as spm.
-* From there, the script makes the same steps as the original Notebook and the only differences are the creating of the model loads ALBERT weights and has shared_layer and embedding_size for ALBERT according to [library readme](https://github.com/kpe/bert-for-tf2)
-* The other difference is the preprocessing that uses the ALBERT tokenizer and the sentencepiece model, but they have the same interface/class as the original tutorial(FullTokenizer).
-* Other changes are only directories.
-* Current Learning on Large
-
 ## Other resources/papers
 ### Other models
 * [Albert](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
