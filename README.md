@@ -19,7 +19,7 @@
   * Finally all tweet tokens are converted to lower-case.
 * [Sample project on COVID](https://arxiv.org/pdf/2005.07503.pdf)
 ### Lexical normalization
-* MoNoise [Model](https://www.aclweb.org/anthology/P19-3032.pdf) [Rules](https://arxiv.org/pdf/1710.03476.pdf)
+* MoNoise [Model](https://www.aclweb.org/anthology/P19-3032.pdf) [Rules](https://arxiv.org/pdf/1710.03476.pdf) [Code](https://bitbucket.org/robvanderg/monoise/src/master/)
   * For  each  word  we  find  the  top  40  closest  candidates  in  thevector space based on the cosine distance
   * We use the [Aspell](http://aspell.net/) spell checker to repair typographical errors
   * We generate a list of all replacement pairs occurring in the training data.
