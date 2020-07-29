@@ -34,6 +34,7 @@
   * `comparison_bert`: gererates a plot where all the bert models with all experiments for lexical normalization and monoise get plotted
   * `comparison_albert`: generates a plot where all the albert models with all experiments for lexical normalization and monoise get plotted
 ## How to generate MoNoise data
+* If you want to generate the MoNoise data yourself just follow the steps below, otherwise you can also download the MoNoise processed data files from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0).
 * Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
 * Follow "Example run" instructions in repo readme to compile and test MoNoise with an example
 * copy twitterdata folder to monoise folder
