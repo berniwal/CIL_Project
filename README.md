@@ -38,22 +38,22 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 * If you want to generate the MoNoise data yourself just follow the steps below, otherwise you can also download the MoNoise processed data files from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0).
 * Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
 * Follow "Example run" instructions in repo readme to compile and test MoNoise with an example
-* copy twitter-datasets folder to monoise folder
-* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-datasets/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
+* copy twitterdata folder to monoise folder
+* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
 * to run on euler cluster in chunks: 
   * connect to [Euler](https://scicomp.ethz.ch/wiki/Getting_started_with_clusters)
   * use ```scp``` to copy monoise folder to Euler cluster
   * load gcc with ```module load new && module load gcc/6.3.0``` 
   * use ```split -l 200000 train_pos_full.txt train_pos_full --additional-suffix=.txt``` if you want to split data in chunks
-  * use ```bsub -W 48:00 -R "rusage[mem=4096]" "./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-datasets/train_pos_fullaa.txt -o ../results/result_pos_fullaa.txt"``` to submit job (-W 24:00 sufficient when not using bad-speller) (run for all chunks) 
+  * use ```bsub -W 48:00 -R "rusage[mem=4096]" "./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_fullaa.txt -o ../results/result_pos_fullaa.txt"``` to submit job (-W 24:00 sufficient when not using bad-speller) (run for all chunks) 
   * use ```cat result_pos_fullaa.txt result_pos_fullab.txt result_pos_fullac.txt result_pos_fullad.txt result_pos_fullae.txt result_pos_fullaf.txt result_pos_fullag.txt > result_pos_full.txt``` to merge chunks
 
 ## Other files
-Jannik UMAP
+* To create the UMAP clustering of USE, you have to run [UMAP.ipynb](https://github.com/berniwal/CIL_Project/blob/master/UMAP.ipynb). To change from MoNoise, to non-Monoise you have to change the input data at the positions indicated by comments.
 Manuel Länge
 ## Other resources/papers
 ### Models
-* [ALBERT](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
+* [ALBERT](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html)
 * [BERT explanation](http://jalammar.github.io/illustrated-bert/)
 * [BERT tutorial](https://github.com/kpe/bert-for-tf2)
 ### Preprocessing
@@ -74,6 +74,6 @@ Manuel Länge
   * We generate word splits by splitting a word on every possible position and checking if bothresulting words are canonical according to the Aspell dictionary.
 * [Lexical Normalization with BERT](https://www.aclweb.org/anthology/D19-5539.pdf)
 * [Twitter Fine-Tuning BERT](https://arxiv.org/pdf/1905.05583.pdf)
-### Links to Google Drive Folders
-* [Bert Base with MoNoise without badspeller and without extra data (Manuel) and Albert Base without MoNoise and without extra data](https://drive.google.com/drive/folders/1ynCZnjcYXVg_qZtam3bAbXrEUiI4CyqI?usp=sharing)
-* [AlBert large, no Monoise, no additional data](https://drive.google.com/drive/folders/1bon0OFwJRQRY1rsEiWRKOhNugxcZ5sPg?usp=sharing)
+### Links to training results
+* [Bert Base with MoNoise without badspeller and without extra dataand Albert Base without MoNoise and without extra data](https://drive.google.com/drive/folders/1ynCZnjcYXVg_qZtam3bAbXrEUiI4CyqI?usp=sharing)
+* [ALBERT large, no Monoise, no additional data](https://drive.google.com/drive/folders/1bon0OFwJRQRY1rsEiWRKOhNugxcZ5sPg?usp=sharing)
