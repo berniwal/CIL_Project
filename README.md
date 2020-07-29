@@ -3,7 +3,7 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 ## How to run CIL-Notebook.ipynb
 * Clone the project from this GitHub repository.
 * Download Twitter Datasets from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put them in the folder `CIL/twitter-datasets`. 
-* Download corresponding checkpoints of the models you want to run (follow readme in specific `CIL/bert/checkpoints/"model_name"` folder), checkpoint for the different Models need to be put into the `CIL/bert/checkpoints/"model_name"` folder. For example for our best performing solution download https://storage.googleapis.com/albert_models/albert_xxlarge_zh.tar.gz and unpack it in the `CIL/bert/checkpoints/albert_xxlarge` folder.
+* Download corresponding checkpoints of the models you want to run (follow readme in specific `CIL/bert/checkpoints/"model_name"` folder), checkpoint for the different Models need to be put into the `CIL/bert/checkpoints/"model_name"` folder. For example for our best performing solution download https://storage.googleapis.com/albert_models/albert_xxlarge_v2.tar.gz and unpack it in the `CIL/bert/checkpoints/albert_xxlarge` folder.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available. 
 * Cell 3 contains the config for the notebook: 
   * set `MODEL= 'bert'` or `'bert_large'` or `'albert'` to change the model
