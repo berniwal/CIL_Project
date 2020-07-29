@@ -38,14 +38,14 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 * If you want to generate the MoNoise data yourself just follow the steps below, otherwise you can also download the MoNoise processed data files from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0).
 * Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
 * Follow "Example run" instructions in repo readme to compile and test MoNoise with an example
-* copy twitterdata folder to monoise folder
-* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-dataset/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
+* copy twitter-datasets folder to monoise folder
+* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-datasets/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
 * to run on euler cluster in chunks: 
   * connect to [Euler](https://scicomp.ethz.ch/wiki/Getting_started_with_clusters)
   * use ```scp``` to copy monoise folder to Euler cluster
   * load gcc with ```module load new && module load gcc/6.3.0``` 
   * use ```split -l 200000 train_pos_full.txt train_pos_full --additional-suffix=.txt``` if you want to split data in chunks
-  * use ```bsub -W 48:00 -R "rusage[mem=4096]" "./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_fullaa.txt -o ../results/result_pos_fullaa.txt"``` to submit job (-W 24:00 sufficient when not using bad-speller) (run for all chunks) 
+  * use ```bsub -W 48:00 -R "rusage[mem=4096]" "./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-datasets/train_pos_fullaa.txt -o ../results/result_pos_fullaa.txt"``` to submit job (-W 24:00 sufficient when not using bad-speller) (run for all chunks) 
   * use ```cat result_pos_fullaa.txt result_pos_fullab.txt result_pos_fullac.txt result_pos_fullad.txt result_pos_fullae.txt result_pos_fullaf.txt result_pos_fullag.txt > result_pos_full.txt``` to merge chunks
 
 ## Other files
