@@ -2,37 +2,37 @@
 ## How to run CIL-Notebook.ipynb
 * Clone the project from this GitHub repository.
 * Download Twitter Datasets from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put them in the folder CIL/twitter-datasets. 
-* Download corresponding checkpoints of the models you want to run (follow readme in specific Model folder), checkpoint for the different Models need to be put into the CIL/bert/checkpoints/"model_name" folder. For example for our best performing solution download https://storage.googleapis.com/albert_models/albert_xxlarge_zh.tar.gz and unpack it in the CIL/bert/checkpoints/albert_xxlarge folder.
+* Download corresponding checkpoints of the models you want to run (follow readme in specific `CIL/bert/checkpoints/"model_name"` folder), checkpoint for the different Models need to be put into the `CIL/bert/checkpoints/"model_name"` folder. For example for our best performing solution download https://storage.googleapis.com/albert_models/albert_xxlarge_zh.tar.gz and unpack it in the `CIL/bert/checkpoints/albert_xxlarge` folder.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available. 
 * Cell 3 contains the config for the notebook: 
-  * set MODEL= 'bert' or 'bert_large' or 'albert' to change the model
-  * set ADDITIONAL_DATA = True or False to toggle the use of extra data. 
-  * set DATASET_PREPROCESSING = ' ' or '_monoise' or '_monoise_b' to select your pre-processing
-* Note for albert you have to change the CHECKPOINT parameter to the corresponding albert version you want to run! Currently this is set to './bert/checkpoints/albert_xxlarge', for training a albert_xlarge model, just change the path to './bert/checkpoints/albert_xlarge' and make sure you have put the checkpoints in the corresponding folder.
+  * set `MODEL= 'bert'` or `'bert_large'` or `'albert'` to change the model
+  * set `ADDITIONAL_DATA = True` or `False` to toggle the use of extra data. 
+  * set `DATASET_PREPROCESSING = ' '` or `'_monoise'` or `'_monoise_b'` to select your pre-processing
+* Note for albert you have to change the `CHECKPOINT` parameter to the corresponding albert version you want to run! Currently this is set to `'./bert/checkpoints/albert_xxlarge'`, for training a albert_xlarge model, just change the path to `'./bert/checkpoints/albert_xlarge'` and make sure you have put the checkpoints in the corresponding folder.
 * ***IMPORTANT*** When training the largest models like bert_large, albert_xxlarge, albert_xlarge it is possible to run into memory issues, in this case you can not run them unless you get assigned a high ram runtime from google or have one as you have a google colab pro subscription. 
-* For bert_xlarge and all the albert models training we used CURRENT_LEARNING_RATE=1e-6, for all the others we set CURRENT_LEARNING_RATE=1e-5.
+* For bert_xlarge and all the albert models training we used `CURRENT_LEARNING_RATE=1e-6`, for all the others we set `CURRENT_LEARNING_RATE=1e-5`.
 ## Reproduce results of our best solution
 ### Retraining
-* Set MODEL='albert', ADDITIONAL_DATA=True, ADDITIONAL_DATA_ONLY_FIRST=True and DATASET_PREPROCESSING='_monoise'
-* Make sure to have put the albert_xxlarge checkpoint in the './bert/checkpoints/albert_xxlarge' folder and that CHECKPOINT='./bert/checkpoints/albert_xxlarge' for the "if MODEL=='albert':' case.
-* Make sure to have downloaded the MoNoise training and testing data for the addititional data (extra_pos_monoise.txt, extra_neg_monoise.txt) and the initial data (train_pos_full_monoise.txt, test_pos_full_monoise.txt, train_neg_full_monoise.txt, train_neg_full_monoise.txt) from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put in the 'CIL/twitter-datasets' folder.
+* Set `MODEL='albert'`, `ADDITIONAL_DATA=True`, `ADDITIONAL_DATA_ONLY_FIRST=True` and `DATASET_PREPROCESSING='_monoise'`
+* Make sure to have put the albert_xxlarge checkpoint in the `'./bert/checkpoints/albert_xxlarge'` folder and that `CHECKPOINT='./bert/checkpoints/albert_xxlarge'` for the `"if MODEL=='albert':'` case.
+* Make sure to have downloaded the MoNoise training and testing data for the addititional data (`extra_pos_monoise.txt, extra_neg_monoise.txt`) and the initial data (`train_pos_full_monoise.txt, test_pos_full_monoise.txt, train_neg_full_monoise.txt, train_neg_full_monoise.txt`) from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put in the `'CIL/twitter-datasets'` folder.
 * Now you can run the Notebook from top to bottom. (albert_xxlarge training can take a while, one epoch takes about half a day and the first epoch with the additional data about one day)
 * ***TIPP*** To prevent Google Colab from disconnecting after 4 hours use: https://stackoverflow.com/questions/57113226/how-to-prevent-google-colab-from-disconnecting/59026251#59026251
 ### Model reloading and generate prediction.
 * If you don't want to retrain the model you can also just generate our final prediction by downloading our best checkpoint from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0).
 * Make sure to have set the parameters in the first cell according to the first and second step in the Retraining section, and make sure to have the testing data mentioned there correctly uploaded. Then run all cells up to and including the cell below the Build Model Text.
-* Also upload the checkpoint to Google Drive and set the use_checkpoint parameter in the third lowest cell to the directory you have put the checkpoint + checkpoint_file_name, in our case this is just 'albert_xxlarge_additional_monoise_h5'.
+* Also upload the checkpoint to Google Drive and set the `use_checkpoint` parameter in the third lowest cell to the directory you have put the checkpoint + checkpoint_file_name, in our case this is just `'albert_xxlarge_additional_monoise_h5'`.
 * Now run the last 4 cells to generate the prediction and the corresponding csv file.
 * **IMPORTANT** If you run this you might run into out of memory issues, as our largest model has a lot of parameters. In this case you have either to hope that google will assign to you a high ram runtime or you need to have a google colab pro subscription and run it there with a high ram runtime.
 ### How to generate the learning plots
-* Make sure to have the folder results/results_final with all the results.txt files uploaded to google drive, if you have cloned the repo and uploaded it with everything you are fine.
+* Make sure to have the folder `results/results_final` with all the `*_final.txt` files uploaded to google drive, if you have cloned the repo and uploaded it with everything you are fine.
 * Run the first two cells to initialize your runtime for the notebook.
 * Then go to the cell below the 'Generate Plots' cell
 * Adjust the save_label to the plots you want to see, the options are:
-  * albert_bert : generates a plot where all the bert models and albert models without lexical normalization and without monoise get plotted
-  * comparison_full: generates a plot where all the bert and albert models with all the experiments for lexical normalization and monoise get plotted
-  * comparison_bert: gererates a plot where all the bert models with all experiments for lexical normalization and monoise get plotted
-  * comparison_albert: generates a plot where all the albert models with all experiments for lexical normalization and monoise get plotted
+  * `albert_bert` : generates a plot where all the bert models and albert models without lexical normalization and without monoise get plotted
+  * `comparison_full`: generates a plot where all the bert and albert models with all the experiments for lexical normalization and monoise get plotted
+  * `comparison_bert`: gererates a plot where all the bert models with all experiments for lexical normalization and monoise get plotted
+  * `comparison_albert`: generates a plot where all the albert models with all experiments for lexical normalization and monoise get plotted
 ## How to generate MoNoise data
 * Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
 * Follow "Example run" instructions in repo readme to compile and test MoNoise with an example
