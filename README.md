@@ -39,7 +39,7 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 * Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
 * Follow "Example run" instructions in repo readme to compile and test MoNoise with an example
 * copy twitterdata folder to monoise folder
-* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
+* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitter-dataset/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
 * to run on euler cluster in chunks: 
   * connect to [Euler](https://scicomp.ethz.ch/wiki/Getting_started_with_clusters)
   * use ```scp``` to copy monoise folder to Euler cluster
