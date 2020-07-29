@@ -4,7 +4,10 @@
 * Download Twitter Dataset from [Kaggle Competition Page](https://www.kaggle.com/c/cil-text-classification-2020) and put in a folder named twitter-datasets in the folder CIL. (only neg-full.txt needed, because too big for GitHub)
 * Read and do things in README of CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available.
-
+* Cell 3 contains the config for the notebook: 
+  * set MODEL= 'bert' or 'bert_large' or 'albert' to change the model
+  * set ADDITIONAL_DATA = True or False to toggle the use of extra data. 
+  * set DATASET_PREPROCESSING = ' ' or '_monoise' or '_monoise_b' to select your pre-processing 
 ## Other resources/papers
 ### Other models
 * [Albert](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
