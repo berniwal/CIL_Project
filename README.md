@@ -22,7 +22,7 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 ### Model reloading and generate prediction.
 * If you don't want to retrain the model you can also just generate our final prediction by downloading our best checkpoint from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0).
 * Make sure to have set the parameters in the first cell according to the first and second step in the Retraining section, and make sure to have the testing data mentioned there correctly uploaded. Then run all cells up to and including the cell below the Build Model Text.
-* Also upload the checkpoint to Google Drive and set the `use_checkpoint` parameter in the third lowest cell to the directory you have put the checkpoint + checkpoint_file_name, in our case this is just `'albert_xxlarge_additional_monoise_h5'`.
+* Also upload the checkpoint to Google Drive and uncomment and set the `use_checkpoint` parameter in the third lowest cell to the directory you have put the checkpoint + checkpoint_file_name, in our case this is just `'albert_xxlarge_additional_monoise.h5'` and also uncomment the line `model.load_weights(use_checkpoint)`.
 * Now run the last 4 cells to generate the prediction and the corresponding csv file.
 * **IMPORTANT** If you run this you might run into out of memory issues, as our largest model has a lot of parameters. In this case you have either to hope that google will assign to you a high ram runtime or you need to have a google colab pro subscription and run it there with a high ram runtime.
 ### How to generate the learning plots
