@@ -1,17 +1,20 @@
 # CIL_Project
 ## What to do before running CIL-Notebook.ipynb
-* [Tutorial](https://github.com/kpe/bert-for-tf2)
 * Download Twitter Dataset from [Kaggle Competition Page](https://www.kaggle.com/c/cil-text-classification-2020) and put in a folder named twitter-datasets in the folder CIL. (only neg-full.txt needed, because too big for GitHub)
 * Read and do things in README of CIL/bert/checkpoints/bert_base or CIL/bert/checkpoints/bert_large_wwm.
 * To run everything now on Google Colab, upload everthing to your Google Drive and then run the Notebook on TPUs if available.
 * Cell 3 contains the config for the notebook: 
   * set MODEL= 'bert' or 'bert_large' or 'albert' to change the model
   * set ADDITIONAL_DATA = True or False to toggle the use of extra data. 
-  * set DATASET_PREPROCESSING = ' ' or '_monoise' or '_monoise_b' to select your pre-processing 
+  * set DATASET_PREPROCESSING = ' ' or '_monoise' or '_monoise_b' to select your pre-processing
+## Other files
+Jannik UMAP
+Manuel Länge
 ## Other resources/papers
-### Other models
-* [Albert](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
+### Models
+* [ALBERT](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html) instead of BERT
 * [BERT explanation](http://jalammar.github.io/illustrated-bert/)
+* [BERT tutorial](https://github.com/kpe/bert-for-tf2)
 ### Preprocessing
 * [Trainig data set](https://www.kaggle.com/kazanova/sentiment140)
 * [Preprocessing](https://trec.nist.gov/pubs/trec28/papers/DICE_UPB.IS.pdf)
@@ -30,9 +33,6 @@
   * We generate word splits by splitting a word on every possible position and checking if bothresulting words are canonical according to the Aspell dictionary.
 * [Lexical Normalization with BERT](https://www.aclweb.org/anthology/D19-5539.pdf)
 * [Twitter Fine-Tuning BERT](https://arxiv.org/pdf/1905.05583.pdf)
-### Adverserial
-* [Adverserial NLP Overview](https://www.aclweb.org/anthology/N19-5001/)
-* [Adverserial with RNNs](https://www.aclweb.org/anthology/L18-1584.pdf)
 ### Links to Google Drive Folders
 * [Bert Base with MoNoise without badspeller and without extra data (Manuel) and Albert Base without MoNoise and without extra data](https://drive.google.com/drive/folders/1ynCZnjcYXVg_qZtam3bAbXrEUiI4CyqI?usp=sharing)
 * [AlBert large, no Monoise, no additional data](https://drive.google.com/drive/folders/1bon0OFwJRQRY1rsEiWRKOhNugxcZ5sPg?usp=sharing)
