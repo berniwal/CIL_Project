@@ -1,5 +1,5 @@
 # CIL_Project
-This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-for-tf2) and their provided [Example](https://github.com/kpe/bert-for-tf2/blob/master/examples/tpu_movie_reviews.ipynb) for movie sentiment analysis was our starting point for the CIL-Notebook.ibynb.
+This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-for-tf2) and their provided examples for movie sentiment analysis on [GPUs](https://github.com/kpe/bert-for-tf2/blob/master/examples/gpu_movie_reviews.ipynb) and [TPUs](https://github.com/kpe/bert-for-tf2/blob/master/examples/tpu_movie_reviews.ipynb) were used as our starting point for the CIL-Notebook.ibynb.
 ## How to run CIL-Notebook.ipynb
 * Clone the project from this GitHub repository.
 * Download Twitter Datasets from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put them in the folder `CIL/twitter-datasets`. 
