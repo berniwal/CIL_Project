@@ -7,6 +7,17 @@
   * set MODEL= 'bert' or 'bert_large' or 'albert' to change the model
   * set ADDITIONAL_DATA = True or False to toggle the use of extra data. 
   * set DATASET_PREPROCESSING = ' ' or '_monoise' or '_monoise_b' to select your pre-processing
+## How to generate MoNoise data
+* Clone [MoNoise repo](https://bitbucket.org/robvanderg/monoise/src/master/)
+* Follow "Example run" instructions in repo readme to compile
+* in monoise/src run command ```./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_full.txt -o ../results/result_pos_full.txt" (-b is bad-speller mode)```
+* to run on euler cluster in chunks: 
+  * connect to [euler](https://scicomp.ethz.ch/wiki/Getting_started_with_clusters)
+  * use ```scp``` to copy everything to euler cluster
+  * use ```split -l 200000 train_pos_full.txt train_pos_full --additional-suffix=.txt``` if you want to split data in chunks
+  * use ```bsub -W 48:00 -R "rusage[mem=4096]" "./tmp/bin/binary -r ../data/en/chenli -m RU -C -b -t -d ../data/en -i ../twitterdata/train_pos_fullaa.txt -o ../results/result_pos_fullaa.txt"``` to submit job (-W 24:00 sufficient when not using bad-speller) (run for all chunks) 
+  * use ```cat result_pos_fullaa.txt result_pos_fullab.txt result_pos_fullac.txt result_pos_fullad.txt result_pos_fullae.txt result_pos_fullaf.txt result_pos_fullag.txt > result_pos_full.txt``` to merge chunks
+
 ## Other files
 Jannik UMAP
 Manuel Länge
