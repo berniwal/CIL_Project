@@ -1,5 +1,7 @@
 # CIL_Project
 This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-for-tf2) and their provided examples for movie sentiment analysis on [GPUs](https://github.com/kpe/bert-for-tf2/blob/master/examples/gpu_movie_reviews.ipynb) and [TPUs](https://github.com/kpe/bert-for-tf2/blob/master/examples/tpu_movie_reviews.ipynb) were used as our starting point for the CIL-Notebook.ibynb.
+## Report
+The final report can be found in the folder `report/report.pdf`.
 ## How to run CIL-Notebook.ipynb
 * Clone the project from this GitHub repository.
 * Download Twitter Datasets from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put them in the folder `CIL/twitter-datasets`. 
@@ -75,6 +77,6 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
   * We generate word splits by splitting a word on every possible position and checking if bothresulting words are canonical according to the Aspell dictionary.
 * [Lexical Normalization with BERT](https://www.aclweb.org/anthology/D19-5539.pdf)
 * [Twitter Fine-Tuning BERT](https://arxiv.org/pdf/1905.05583.pdf)
-### Links to training results
+## Links to training results
 * [Bert Base with MoNoise without badspeller and without extra dataand Albert Base without MoNoise and without extra data](https://drive.google.com/drive/folders/1ynCZnjcYXVg_qZtam3bAbXrEUiI4CyqI?usp=sharing)
 * [ALBERT large, no Monoise, no additional data](https://drive.google.com/drive/folders/1bon0OFwJRQRY1rsEiWRKOhNugxcZ5sPg?usp=sharing)
