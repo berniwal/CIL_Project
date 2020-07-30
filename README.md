@@ -50,7 +50,7 @@ This Repository contains code from [bert-for-tf2](https://github.com/kpe/bert-fo
 
 ## Other files
 * To create the UMAP clustering of USE, you have to run [UMAP.ipynb](https://github.com/berniwal/CIL_Project/blob/master/UMAP.ipynb). To change from MoNoise, to non-Monoise you have to change the input data at the positions indicated by comments.
-Manuel Länge
+* To generate the plots [Base_data.png](https://github.com/berniwal/CIL_Project/blob/master/plots/Base_data.png) and [Extra_data.png](https://github.com/berniwal/CIL_Project/blob/master/plots/Extra_data.png) run [Data_stats.ipynb](https://github.com/berniwal/CIL_Project/blob/master/Data_stats.ipynb)
 ## Other resources/papers
 ### Models
 * [ALBERT](https://ai.googleblog.com/2019/12/albert-lite-bert-for-self-supervised.html)
