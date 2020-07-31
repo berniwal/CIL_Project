@@ -17,7 +17,7 @@ The final [report](https://github.com/berniwal/CIL_Project/blob/master/report/bu
 ## Reproduce results of our best solution
 ### Retraining
 * Set `MODEL='albert'`, `ADDITIONAL_DATA=True`, `ADDITIONAL_DATA_ONLY_FIRST=True` and `DATASET_PREPROCESSING='_monoise'`
-* Make sure to have put the albert_xxlarge checkpoint in the `'./bert/checkpoints/albert_xxlarge'` folder and that `CHECKPOINT='./bert/checkpoints/albert_xxlarge'` for the `"if MODEL=='albert':'` case.
+* Make sure to have put the albert_xxlarge checkpoint files (downloaded from https://storage.googleapis.com/albert_models/albert_xxlarge_v2.tar.gz) unziped in the `'./bert/checkpoints/albert_xxlarge'` folder and that `CHECKPOINT='./bert/checkpoints/albert_xxlarge'` for the `"if MODEL=='albert':'` case.
 * Make sure to have downloaded the MoNoise training and testing data for the addititional data (`extra_pos_monoise.txt, extra_neg_monoise.txt`) and the initial data (`train_pos_full_monoise.txt, test_pos_full_monoise.txt, train_neg_full_monoise.txt, train_neg_full_monoise.txt`) from [Dropbox](https://www.dropbox.com/sh/gvzo0jrnfhcnkeh/AACYlqypVkBYzhL_hyjWXRwNa?dl=0) and put in the `'CIL/twitter-datasets'` folder.
 * Now you can run the Notebook from top to bottom. (albert_xxlarge training can take a while, one epoch takes about half a day and the first epoch with the additional data about one day)
 * ***TIPP*** To prevent Google Colab from disconnecting after 4 hours use: https://stackoverflow.com/questions/57113226/how-to-prevent-google-colab-from-disconnecting/59026251#59026251
